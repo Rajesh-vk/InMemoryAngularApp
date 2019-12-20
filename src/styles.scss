@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+div.card-header {
+ font-size: large;
+}
+
+div.card {
+  margin-top: 10px
+}
+
+.table {
+  margin-top: 10px
+}
+
+.bg {
+  background-image: url("./assets/images/Home.PNG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px; 
+  position: relative;
+  
+}
