@@ -47,6 +47,6 @@ export class AppComponent {
 
   logOut(): void {
     this.authService.logout();
-    this.router.navigateByUrl('/welcome');
+    this.router.navigateByUrl('/login');
   }
 }
