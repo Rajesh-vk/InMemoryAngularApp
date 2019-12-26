@@ -32,8 +32,6 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     HomeComponent,
     PageNotFoundComponent,
-    GridListComponent,
-    GridViewComponent
   ],
   bootstrap: [AppComponent]
 })
