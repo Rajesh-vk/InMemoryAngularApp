@@ -3,10 +3,28 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { StarComponent } from './star.component';
+import {
+  MatTableModule,
+  MatInputModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatMenuModule,
+  MatCardModule,
+  MatIconModule
+
+} from '@angular/material';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MatTableModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatMenuModule,
+    MatCardModule,
+    MatIconModule
+
   ],
   declarations: [
     StarComponent
@@ -14,7 +32,14 @@ import { StarComponent } from './star.component';
   exports: [
     StarComponent,
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatMenuModule,
+    MatCardModule,
+    MatIconModule
   ]
 })
 export class SharedModule { }

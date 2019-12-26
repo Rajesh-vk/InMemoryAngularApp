@@ -1,0 +1,54 @@
+<div class="crux-simple-table">
+  <div class="list-table">
+    <app-grid-list [name]="name" [columns]="columns" [hideHeader]="hideHeader" (filterChange)="onFilterChange($event)">
+      <mat-table #table [dataSource]="dataSource" matSort>
+        <ng-container *ngFor="let column of columns">
+          <ng-container *ngIf="column.isModelProperty" [matColumnDef]="column.property">
+              <ng-container *ngIf="(enableSorting)  as isSortable else notSortable">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> {{ column.name }}</mat-header-cell>
+              </ng-container>
+              <ng-template #notSortable>
+                  <mat-header-cell *matHeaderCellDef > {{ column.name }}</mat-header-cell>
+              </ng-template>
+            <mat-cell *matCellDef="let row">
+              <ng-container [ngSwitch]="column.elementType">
+                <ng-container *ngSwitchCase="'link'">
+                  <button mat-button color="primary" (click)="onSelectValue(row)" class="btn-renew">
+                    {{ row[column.property] }}
+                  </button>
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                  {{ column.convertToTitleCase ? (row[column.property] | titlecase) : (row[column.property])}}
+                </ng-container>
+              </ng-container>
+            </mat-cell>
+          </ng-container>
+          <ng-container *ngIf="!column.isModelProperty" [matColumnDef]="column.property">
+              <ng-container *ngIf="(enableSorting)  as isSortable else notSortable">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> {{ column.name }}</mat-header-cell>
+              </ng-container>
+              <ng-template #notSortable>
+                  <mat-header-cell *matHeaderCellDef > {{ column.name }}</mat-header-cell>
+                </ng-template>
+            <mat-cell *matCellDef="let row">
+              <ng-container [ngSwitch]="column.elementType">
+                <ng-container *ngSwitchCase="'link'">
+                  <button mat-button color="primary" #btngrid (click)="onSelectValue(row)" class="btn-renew"
+                    [attr.disabled]="onCellRenderer({data: row, type: btngrid})">
+                    {{column.icon ? column.icon : column.property}}
+                  </button>
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                  {{ column.convertToTitleCase ? (row[column.property] | titlecase) : (row[column.property])}}
+                </ng-container>
+              </ng-container>
+            </mat-cell>
+          </ng-container>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="visibleColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: visibleColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator *ngIf="enablePagination" class="paginator" [pageSize]="pageSize"></mat-paginator>
+    </app-grid-list>
+  </div>
+</div>

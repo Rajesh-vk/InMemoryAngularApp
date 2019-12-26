@@ -15,6 +15,9 @@ import { PageNotFoundComponent } from './page-not-found.component';
 /* Feature Modules */
 import { UserModule } from './user/user.module';
 import { HomeComponent } from './home/home.component';
+import { GridListComponent } from './commonComponent/grid-list/grid-list.component';
+import { GridViewComponent } from './commonComponent/grid-view/grid-view.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -22,12 +25,15 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     HttpClientModule,
     UserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule
   ],
   declarations: [
     AppComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    GridListComponent,
+    GridViewComponent
   ],
   bootstrap: [AppComponent]
 })
