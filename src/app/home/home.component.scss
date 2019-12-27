@@ -11,6 +11,7 @@
   max-width: 500px;
   background-color:gray !important;
   color: white;
+  font-size: 12px;
 }
 
 p{
@@ -23,6 +24,7 @@ p{
   text-align-last: right;
   font-size: 12px;
   padding-right: 5px;
-  min-height: 40px;
-  vertical-align: middle;
+  min-height: 30px;
+  padding-top: 10px;
+  white-space: nowrap;
 }
