@@ -1,18 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { AuthGuard } from './user/auth.guard';
-import { HomeComponent } from './home/home.component';
-
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      {
-        path: 'dashBoard',
-        component: HomeComponent,
-        canActivate: [AuthGuard]
-     },
      {
        path: '',
        redirectTo: 'login',

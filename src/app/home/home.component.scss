@@ -1,11 +1,28 @@
-.bg {
-    background-image: url("../../assets/images/Home.PNG");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%; 
-    position: relative;
-    
-  }
-
+.mat-card {
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  display: block;
+  position: relative;
+  padding: 16px;
+  border-radius: 4px;
   
+}
+
+.card-main {
+  max-width: 500px;
+  background-color:gray !important;
+  color: white;
+}
+
+p{
+  font-size: 24px;
+}
+
+.card-ft {
+  background-color:black !important;
+  color: white;
+  text-align-last: right;
+  font-size: 12px;
+  padding-right: 5px;
+  min-height: 40px;
+  vertical-align: middle;
+}
