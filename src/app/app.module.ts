@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 // Imports for loading & configuring the in-memory web api
-imports { InMemoryWebApiModule}  from 'angular-in-memory-web-api'
+import { InMemoryWebApiModule}  from 'angular-in-memory-web-api';
 
 
 import { AppRoutingModule } from './app-routing.module';

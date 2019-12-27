@@ -6,6 +6,7 @@ export class AppData implements InMemoryDbService {
 createDb(){
 
     const eventSummarys = EventSummaryData.eventSummarys;
+    return {eventSummarys}
 }
 
 
