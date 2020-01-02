@@ -15,10 +15,10 @@ import { PageNotFoundComponent } from './page-not-found.component';
 /* Feature Modules */
 import { UserModule } from './user/user.module';
 import { CommonModule } from '@angular/common';
-import {AppData} from './app-data'
+import {AppData} from './app-data';
 import { HomeModule } from './home/home.module';
-import { EventComponent } from './events/event/event.component';
-
+import { EventModule } from './events/event.module';
+import { ReportModule } from './report/report.module';
 
 @NgModule({
   imports: [
@@ -28,13 +28,14 @@ import { EventComponent } from './events/event/event.component';
     InMemoryWebApiModule.forRoot(AppData,{delay:1000}),
     UserModule,
     HomeModule,
+    EventModule,
+    ReportModule,
     AppRoutingModule,
     CommonModule
   ],
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    EventComponent,
+    PageNotFoundComponent
   ],
   bootstrap: [AppComponent]
 })
