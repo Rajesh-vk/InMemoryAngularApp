@@ -17,6 +17,7 @@ import { UserModule } from './user/user.module';
 import { CommonModule } from '@angular/common';
 import {AppData} from './app-data'
 import { HomeModule } from './home/home.module';
+import { EventComponent } from './events/event/event.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { HomeModule } from './home/home.module';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    EventComponent,
   ],
   bootstrap: [AppComponent]
 })
