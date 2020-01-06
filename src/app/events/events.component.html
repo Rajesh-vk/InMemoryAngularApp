@@ -1,3 +1,23 @@
-<p>
-  events works!
-</p>
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+  <div class="card-body">
+    <div class="container" *ngIf="eventSummary$ | async eventSummary">
+      <div class="row">
+        <div class="col-md-12">
+            <app-grid-view name="Event Details" pageSize="5" [columns]="[
+            {name : 'eventName', property:'eventName', visible: true, isModelProperty: true, elementType : 'link'},
+            {name : 'month', property:'month', visible: true, isModelProperty: true},
+            {name : 'baseLocation', property:'baseLocation', visible: true, isModelProperty: true},
+            {name : 'beneficiaryName', property:'beneficiaryName', visible: true, isModelProperty: true},
+            {name : 'activityType', property:'activityType', visible: true, isModelProperty: true},
+            ]"  [data]="eventSummary">
+
+
+            </app-grid-view>
+      </div>
+    </div>
+    
+  </div>
+</div>
