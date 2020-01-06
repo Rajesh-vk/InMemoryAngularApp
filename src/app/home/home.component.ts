@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
   eventSummary$ = this.homeService.eventsSummary$
     .pipe(
       tap(data => {
-        this.liveImpacted = data.map(a => a.livesImpacted).reduce((a,b) => a + b);
-        this.totalVolunteers = data.map(a => a.totalNoVolunteers).reduce((a,b) => a + b);
+        this.liveImpacted = data.map(a => a.livesImpacted).reduce((a, b) => a + b);
+        this.totalVolunteers = data.map(a => a.totalNoVolunteers).reduce((a, b) => a + b);
         this.totalEvents = data.length;
       }),
       catchError(err => {

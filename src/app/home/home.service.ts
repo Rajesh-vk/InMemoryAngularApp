@@ -13,7 +13,8 @@ export class HomeService {
   eventsSummary$ = this.httpUrl.get<EventSummary[]>(this.eventsSummaryUrl)
     .pipe(
       tap(data => console.log('EventsSummary', JSON.stringify(data))),
-      catchError(this.handleError)
+      catchError(this.handleError),
+      shareReplay(1)
     );
   constructor(private httpUrl: HttpClient, ) { }
 
