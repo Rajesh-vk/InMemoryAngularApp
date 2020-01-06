@@ -10,11 +10,11 @@ export interface EventSummary {
             eventName: string;
             eventDescription: string;
             eventDate: string;
-            totalNoVolunteers: string;
+            totalNoVolunteers?: number;
             totalVolunteHours: string;
             totalTravelHours: string;
             overallVolunteeringHours: string;
-            livesImpacted: string;
+            livesImpacted?: number;
             activityType: string;
             status: string;
             pocID: string;

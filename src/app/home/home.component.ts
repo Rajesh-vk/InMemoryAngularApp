@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
 import { Subject, EMPTY } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -12,16 +12,25 @@ export class HomeComponent implements OnInit {
   pageTitle = 'DashBoard';
   private errorMessageSubject = new Subject<string>();
   errorMessage$ = this.errorMessageSubject.asObservable();
+  totalEvents = 0;
+  liveImpacted = 0;
+  totalVolunteers = 0;
+  totalPartcipants = 0;
   eventSummary$ = this.homeService.eventsSummary$
     .pipe(
+      tap(data => {
+        this.liveImpacted = data.map(a => a.livesImpacted).reduce((a,b) => a + b);
+        this.totalVolunteers = data.map(a => a.totalNoVolunteers).reduce((a,b) => a + b);
+        this.totalEvents = data.length;
+      }),
       catchError(err => {
         this.errorMessageSubject.next(err);
         return EMPTY;
       })
     );
-  constructor(private homeService: HomeService) { }
+constructor(private homeService: HomeService) { }
 
-  ngOnInit() {
+ngOnInit() {
   }
 
 }

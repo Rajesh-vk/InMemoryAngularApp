@@ -3,13 +3,13 @@
     {{pageTitle}}
   </div>
   <div class="card-body">
-    <div class="container">
+    <div class="container" *ngIf="eventSummary$ | async eventSummary">
       <div class="row">
         <div class="col-md-3">
             <mat-card class="card-main">Total Events
                 <mat-card-content class="card-main">
                   <p>
-                    8
+                    {{totalEvents}}
                   </p>
                 </mat-card-content>
                 <mat-card-footer class="card-ft">
@@ -21,7 +21,7 @@
             <mat-card class="card-main">Live Impacts
                 <mat-card-content class="card-main">
                   <p>
-                    8
+                    {{liveImpacted}}
                   </p>
                 </mat-card-content>
                 <mat-card-footer class="card-ft">
@@ -33,7 +33,7 @@
             <mat-card class="card-main">Total Volunteers
                 <mat-card-content class="card-main">
                   <p>
-                    8
+                    {{totalVolunteers}}
                   </p>
                 </mat-card-content>
                 <mat-card-footer class="card-ft">
@@ -45,7 +45,7 @@
             <mat-card class="card-main">Total Participants
                 <mat-card-content class="card-main">
                   <p>
-                    8
+                    {{totalVolunteers}}
                   </p>
                 </mat-card-content>
                 <mat-card-footer class="card-ft">
