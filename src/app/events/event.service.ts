@@ -13,7 +13,6 @@ export class EventService {
 
   eventsSummary$ = this.httpUrl.get<EventSummary[]>(this.eventsSummaryUrl)
     .pipe(
-      tap(data => console.log('EventsSummary', JSON.stringify(data))),
       shareReplay(1)
     );
 

@@ -20,6 +20,7 @@ import { HomeModule } from './home/home.module';
 import { EventModule } from './events/event.module';
 import { ReportModule } from './report/report.module';
 
+
 @NgModule({
   imports: [
     BrowserModule,
