@@ -6,16 +6,16 @@
     <div class="container" *ngIf="eventSummary$ | async eventSummary">
       <div class="row">
         <div class="col-md-12">
-            <app-grid-view name="Event Details" pageSize="5" [columns]="[
-            {name : 'eventName', property:'eventName', visible: true, isModelProperty: true, elementType : 'link'},
-            {name : 'month', property:'month', visible: true, isModelProperty: true},
-            {name : 'baseLocation', property:'baseLocation', visible: true, isModelProperty: true},
-            {name : 'beneficiaryName', property:'beneficiaryName', visible: true, isModelProperty: true},
-            {name : 'activityType', property:'activityType', visible: true, isModelProperty: true},
-            ]"  [data]="eventSummary">
+    <app-grid-view #accountListTable class="your-class" name="Search Results" pageSize="10" [columns]="[
+    { name: 'Event Name', property: 'eventName', visible: true, isModelProperty: true,elementType: 'link' },
+    { name: 'Event Date', property: 'eventDate', visible: true, isModelProperty: true },
+    { name: 'Base Location', property: 'baseLocation', visible: true, isModelProperty: true, convertToTitleCase: true },
+    { name: 'Beneficiary Name', property: 'beneficiaryName', visible: true, isModelProperty: true, convertToTitleCase: true },
+    { name: 'category', property: 'category', visible: true, isModelProperty: true, convertToTitleCase: true },
+    { name: 'project', property: 'project', visible: true, isModelProperty: true },
+    { name: 'councilName', property: 'councilName', visible: true, isModelProperty: true }
+  ]" [data]="eventSummary" (valueSelected)="getSelectedValue($event)"></app-grid-view>
 
-
-            </app-grid-view>
       </div>
     </div>
     
