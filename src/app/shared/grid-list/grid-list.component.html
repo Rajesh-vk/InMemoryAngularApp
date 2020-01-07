@@ -1,21 +1,21 @@
-<div class="crux-list-table">
-  <div class="crux-list-header" *ngIf="!hideHeader"
-       fxLayout="row" fxLayoutAlign="start baseline" fxLayoutGap="8px"
-       fxLayoutGap.gt-xs="24px">
-    <div fxLayout="column" fxLayoutAlign="start baseline" fxLayoutGap="24px" fxFlex="grow"
-         fxLayout.gt-xs="row">
-      <div class="crux-list-name">{{ name }}</div>
-      <mat-form-field class="crux-filter-input" floatPlaceholder="never" fxFlex>
-        <mat-icon class="crux-filter-input-icon" matPrefix>search</mat-icon>
-        <input matInput #filter placeholder="Search&hellip;">
+<div >
+  <div class="container" *ngIf="!hideHeader">
+    <div class="row">
+        <div >{{ name }}</div>
+      <div >
+      <mat-form-field >
+        <mat-icon  matPrefix>search</mat-icon>
+        <input matInput #filter placeholder="Search">
       </mat-form-field>
-    </div>
-
-    <button class="crux-column-filter" type="button" mat-icon-button [matMenuTriggerFor]="columnFilter">
+      </div>
+      <div>
+        <button  type="button" mat-icon-button [matMenuTriggerFor]="columnFilter">
       <mat-icon>filter_list</mat-icon>
     </button>
     <ng-content select=".actions"></ng-content>
   </div>
+  </div>
+</div>
 
   <mat-menu #columnFilter="matMenu" yPosition="below" xPosition="before">
     <button class="checkbox-item mat-menu-item" *ngFor="let column of columns"
