@@ -1,13 +1,10 @@
-import {EventSummaryData} from './eventDetails';
 import {InMemoryDbService} from 'angular-in-memory-web-api';
+import { EventSummaryData } from './dbData/eventSummary';
 
 export class AppData implements InMemoryDbService {
 
-createDb(){
-
+createDb() {
     const eventSummarys = EventSummaryData.eventSummarys;
-    return {eventSummarys}
+    return {eventSummarys};
 }
-
-
 }
