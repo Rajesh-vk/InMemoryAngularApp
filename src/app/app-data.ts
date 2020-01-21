@@ -4,7 +4,7 @@ import { EventSummaryData } from './dbData/eventSummary';
 export class AppData implements InMemoryDbService {
 
 createDb() {
-    const eventSummarys = EventSummaryData.eventSummarys;
+    const eventSummarys = EventSummaryData.eventsSummary;
     return {eventSummarys};
 }
 }
