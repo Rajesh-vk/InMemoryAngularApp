@@ -2,7 +2,7 @@ import { Answer } from '../Model/Answer';
 
 
 export class AnswerData {
-    static eventsSummary: Answer[] = [
+    static Answers: Answer[] = [
         {
             answerId: 1,
             answerDesc: 'Do not wist to Disclose',

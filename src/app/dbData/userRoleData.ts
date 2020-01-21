@@ -2,7 +2,7 @@ import { UserRole } from '../Model/UserRole';
 
 
 export class UserRoleData {
-    static eventsSummary: UserRole[] = [
+    static UserRoles: UserRole[] = [
         {
             userRoleName: 'Admin',
             userRoleId: 1,

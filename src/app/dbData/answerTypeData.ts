@@ -2,7 +2,7 @@ import { AnswerType } from '../Model/AnswerType';
 
 
 export class AnswerTypeData {
-    static eventsSummary: AnswerType[] = [
+    static AnswerTypes: AnswerType[] = [
         {
             answerTypeName: 'Multiple Answers',
             answerTypeId: 1,

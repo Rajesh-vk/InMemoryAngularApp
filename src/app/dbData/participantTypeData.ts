@@ -2,7 +2,7 @@ import { ParticipantType } from '../Model/ParticipantType';
 
 
 export class ParticipantTypeData {
-    static eventsSummary: ParticipantType[] = [
+    static ParticipantTypes: ParticipantType[] = [
         {
             participantTypeName: 'Participated',
             participantTypeId: 1,
