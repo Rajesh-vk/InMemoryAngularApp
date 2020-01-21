@@ -1,6 +1,6 @@
 export interface EmployeeEventLink {
-    eventId: number;
-    poc: boolean;
-    employeeId: number;
-    participantTypeId: number;
+    eventId: string;
+    poc: string;
+    employeeId: string;
+    participantTypeId: string;
 }

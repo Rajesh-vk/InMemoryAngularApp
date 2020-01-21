@@ -1,8 +1,8 @@
 export interface Employee {
-    employeeId: number;
+    employeeId: string;
     employeeName: string;
     contactNumber: string;
     emailId: string;
     password: string;
-    userRoleId: number;
+    userRoleId: string;
 }
