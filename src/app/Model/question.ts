@@ -1,5 +1,5 @@
 export interface Question {
-    questionId: number;
+    questionId: string;
     questionDesc: string;
-    participantTypeId: number;
+    participantTypeId: string;
 }
