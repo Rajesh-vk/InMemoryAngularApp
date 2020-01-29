@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventService } from '../event.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-event-detail',
@@ -9,8 +10,10 @@ import { EventService } from '../event.service';
 })
 export class EventDetailComponent implements OnInit {
  id: string;
- pageTitle = 'Product Detail';
+ pageTitle = 'Event Detail';
  selectedEvent$ = this.eventService.selectedEvent$;
+ private errorMessageSubject = new Subject<string>();
+ errorMessage$ = this.errorMessageSubject.asObservable();
   constructor(private route: ActivatedRoute, private eventService: EventService) { }
 
   ngOnInit() {

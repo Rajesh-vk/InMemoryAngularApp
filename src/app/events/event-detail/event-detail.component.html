@@ -4,64 +4,64 @@
   </div>
 
   <div class="card-body"
-       *ngIf="selectedEvent$  | async  event">
+       *ngIf="selectedEvent$  | async as  event">
 
-    <div class="row">
+    <!-- <div class="row">
 
-      <div class="col-md-8">
+      <div class="col-md-8"> -->
         <div class="row">
-          <div class="col-md-3">Name:</div>
+          <div class="col-md-3">Event Name:</div>
           <div class="col-md-6">{{event.eventName}}</div>
         </div>
         <div class="row">
-          <div class="col-md-3">Code:</div>
+          <div class="col-md-3">Event Description:</div>
           <div class="col-md-6">{{event.eventDescription}}</div>
         </div>
         <div class="row">
-          <div class="col-md-3">Description:</div>
-          <div class="col-md-6">{{event.description}}</div>
+          <div class="col-md-3">Base Location:</div>
+          <div class="col-md-6">{{event.baseLocation}}</div>
         </div>
         <div class="row">
-          <div class="col-md-3">Availability:</div>
+          <div class="col-md-3">Event Date:</div>
           <div class="col-md-6">{{event.eventDate}}</div>
         </div>
-        <!-- <div class="row">
-          <div class="col-md-3">Price:</div>
-          <div class="col-md-6">{{event.price|currency:"USD":"symbol"}}</div>
-        </div> -->
-        <!-- <div class="row">
-          <div class="col-md-3">5 Star Rating:</div>
-          <div class="col-md-6">
-            <pm-star [rating]="event.starRating">
-            </pm-star>
-          </div>
-        </div> -->
         <div class="row">
-          <div class="col-md-3">Category:</div>
+          <div class="col-md-3">Beneficiary Name:</div>
+          <div class="col-md-6">{{event.beneficiaryName}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Venue Address:</div>
+          <div class="col-md-6">{{event.venueAddress}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Total No of Volunteers:</div>
           <div class="col-md-6">{{event.totalNoVolunteers}}</div>
         </div>
         <div class="row">
-          <div class="col-md-3">Tags:</div>
-          <div class="col-md-6">{{event.totalNoVolunteers}}</div>
+          <div class="col-md-3">Total Volunteers Hours:</div>
+          <div class="col-md-6">{{event.totalVolunteHours}}</div>
         </div>
-      </div>
-
-      <div class="col-md-4"
-           *ngIf="event.imageUrl">
-        <img class="center-block img-responsive"
-             [style.height.px]="150"
-             [style.margin.px]="2"
-             [src]="event.imageUrl"
-             [title]="event.productName">
-      </div>
-    </div>
+        <div class="row">
+          <div class="col-md-3">Total Travel Hours:</div>
+          <div class="col-md-6">{{event.totalTravelHours}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Lives Impacted:</div>
+          <div class="col-md-6">{{event.livesImpacted}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">category:</div>
+          <div class="col-md-6">{{event.category}}</div>
+        </div>
+      <!-- </div>
+    </div> -->
 
     <div class="row mt-4">
       <div class="col-md-4">
         <button class="btn btn-outline-secondary mr-3"
                 style="width:80px"
-                [routerLink]="['/products']"
-                queryParamsHandling="preserve">
+                [routerLink]="['/event']"
+                >
           <i class="fa fa-chevron-left"></i> Back
         </button>
         <button class="btn btn-outline-primary"
