@@ -18,7 +18,7 @@ export class EventService {
       shareReplay(1)
     );
 
-  private eventSelectedSubject = new BehaviorSubject<string>('EVNT00047261');
+  private eventSelectedSubject = new BehaviorSubject<string>('0');
   eventSelectedAction$ = this.eventSelectedSubject.asObservable();
 
   selectedEvent$ = combineLatest([
