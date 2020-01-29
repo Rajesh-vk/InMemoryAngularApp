@@ -18,7 +18,7 @@ export class EventService {
       shareReplay(1)
     );
 
-  private eventSelectedSubject = new BehaviorSubject<string>('0');
+  private eventSelectedSubject = new BehaviorSubject<string>('EVNT00047261');
   eventSelectedAction$ = this.eventSelectedSubject.asObservable();
 
   selectedEvent$ = combineLatest([
@@ -26,7 +26,7 @@ export class EventService {
     this.eventSelectedAction$
   ]).pipe(
     map(([events, selectedEventId]) =>
-    events.find(event => event.id === selectedEventId)
+    events.find(event => event.eventID === selectedEventId)
     ),
     tap(event => console.log('selectedEvent', event)),
     shareReplay(1)

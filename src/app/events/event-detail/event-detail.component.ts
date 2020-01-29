@@ -9,6 +9,8 @@ import { EventService } from '../event.service';
 })
 export class EventDetailComponent implements OnInit {
  id: string;
+ pageTitle = 'Product Detail';
+ selectedEvent$ = this.eventService.selectedEvent$;
   constructor(private route: ActivatedRoute, private eventService: EventService) { }
 
   ngOnInit() {

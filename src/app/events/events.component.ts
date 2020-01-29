@@ -4,6 +4,7 @@ import { Subject, EMPTY } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { HomeService } from '../home/home.service';
 import { EventSummary } from '../Model/eventSummay';
+import { EventService } from './event.service';
 
 
 @Component({
@@ -27,12 +28,13 @@ export class EventsComponent implements OnInit {
       return EMPTY;
     })
   );
-constructor(private eventService: HomeService, private route: ActivatedRoute, private router: Router) { }
+constructor(private eventService: EventService, private route: ActivatedRoute, private router: Router) { }
   ngOnInit() {
   }
 
   getSelectedValue(row){
-    console.log(row);
+    console.log(row.eventID);
+    this.eventService.selectedEventChanged(row.eventID);
     this.router.navigate(['/event', row.eventID]);
   }
 
