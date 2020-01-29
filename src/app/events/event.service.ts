@@ -18,7 +18,7 @@ export class EventService {
       shareReplay(1)
     );
 
-  private eventSelectedSubject = new BehaviorSubject<number>(0);
+  private eventSelectedSubject = new BehaviorSubject<string>('0');
   eventSelectedAction$ = this.eventSelectedSubject.asObservable();
 
   selectedEvent$ = combineLatest([
@@ -34,7 +34,7 @@ export class EventService {
 
   constructor(private httpUrl: HttpClient, ) { }
 
-  selectedEventChanged(selectedEventId: number): void {
+  selectedEventChanged(selectedEventId: string): void {
     this.eventSelectedSubject.next(selectedEventId);
   }
 
