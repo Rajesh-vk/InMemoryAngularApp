@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventService } from './event.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, EMPTY } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { HomeService } from '../home/home.service';
@@ -27,8 +27,12 @@ export class EventsComponent implements OnInit {
       return EMPTY;
     })
   );
-constructor(private eventService: HomeService) { }
+constructor(private eventService: HomeService, private route: ActivatedRoute, private router: Router) { }
   ngOnInit() {
+  }
+
+  getSelectedValue(row){
+    console.log(row);
   }
 
 }
