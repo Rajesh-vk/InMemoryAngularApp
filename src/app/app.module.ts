@@ -29,7 +29,6 @@ import { ReportModule } from './report/report.module';
     InMemoryWebApiModule.forRoot(AppData,{delay:1000}),
     UserModule,
     HomeModule,
-    EventModule,
     ReportModule,
     AppRoutingModule,
     CommonModule
