@@ -13,8 +13,39 @@ export class EventService {
 
   eventsSummary$ = this.httpUrl.get<EventSummary[]>(this.eventsSummaryUrl)
     .pipe(
+      tap(data => console.log('EventsSummary', JSON.stringify(data))),
+      catchError(this.handleError),
       shareReplay(1)
     );
 
-    constructor(private httpUrl: HttpClient, ) { }
+  private eventSelectedSubject = new BehaviorSubject<number>(0);
+  eventSelectedAction$ = this.eventSelectedSubject.asObservable();
+
+  selectedEvent$ = combineLatest([
+    this.eventsSummary$,
+    this.eventSelectedAction$
+  ]).pipe(
+    map(([events, selectedEventId]) =>
+    events.find(event => event.id === selectedEventId)
+    ),
+    tap(event => console.log('selectedEvent', event)),
+    shareReplay(1)
+  );
+
+  constructor(private httpUrl: HttpClient, ) { }
+
+  selectedEventChanged(selectedEventId: number): void {
+    this.eventSelectedSubject.next(selectedEventId);
+  }
+
+  private handleError(err: any) {
+    let errorMessage: string;
+    if (err.error instanceof ErrorEvent) {
+      errorMessage = `An error occurred: ${err.error.message}`;
+    } else {
+      errorMessage = `Backend returned code ${err.status}: ${err.body.error}`;
+    }
+    console.error(err);
+    return throwError(errorMessage);
+  }
 }

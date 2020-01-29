@@ -33,6 +33,7 @@ constructor(private eventService: HomeService, private route: ActivatedRoute, pr
 
   getSelectedValue(row){
     console.log(row);
+    this.router.navigate(['/event', row.eventID]);
   }
 
 }
