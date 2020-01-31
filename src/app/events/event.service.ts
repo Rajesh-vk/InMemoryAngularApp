@@ -25,7 +25,7 @@ export class EventService {
     this.eventSelectedAction$
   ]).pipe(
     map(([events, selectedEventId]) =>
-    events.find(event => event.eventID === selectedEventId)
+    events.find(event => event.id === selectedEventId)
     ),
 
     shareReplay(1)

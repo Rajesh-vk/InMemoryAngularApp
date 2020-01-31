@@ -1,5 +1,5 @@
 export interface EventSummary {
-            eventID: string;
+            id: string;
             month: string;
             baseLocation: string;
             beneficiaryName: string;

@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-12" *ngIf="eventDetails && eventDetails.length > 0">
     <app-grid-view #accountListTable class="your-class" name="Filter" pageSize="5" [columns]="[
-    { name: 'Event Id', property: 'eventID', visible: true, isModelProperty: true,elementType: 'link' },
+    { name: 'Event Id', property: 'id', visible: true, isModelProperty: true,elementType: 'link' },
     { name: 'Month', property: 'month', visible: true, isModelProperty: true },
     { name: 'Event Name', property: 'eventName', visible: true, isModelProperty: true, convertToTitleCase: true },
     { name: 'Base Location', property: 'baseLocation', visible: true, isModelProperty: true, convertToTitleCase: true },

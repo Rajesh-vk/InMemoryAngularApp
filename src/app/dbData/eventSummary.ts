@@ -4,7 +4,7 @@ import { EventSummary } from '../Model/eventSummay';
 export class EventSummaryData {
     static eventsSummary: EventSummary[] = [
         {
-            eventID: 'EVNT00047261',
+            id: 'EVNT00047261',
             month: 'DEC',
             baseLocation: 'Singapore',
             beneficiaryName: 'KWONG WAI SHIU HOSPITAL',
@@ -27,7 +27,7 @@ export class EventSummaryData {
             pocContactNumber: '9962294222'
         },
         {
-            eventID: 'EVNT00046103',
+            id: 'EVNT00046103',
             month: 'DEC',
             baseLocation: 'Chennai',
             beneficiaryName: 'Kamarajar Illam,Tambaram',
@@ -50,7 +50,7 @@ export class EventSummaryData {
             pocContactNumber: '9962294222'
         },
         {
-            eventID: 'EVNT00046385',
+            id: 'EVNT00046385',
             month: 'DEC',
             baseLocation: 'United Kingdom',
             beneficiaryName: 'St. Edward’s CE Voluntary Aided Primary School',
@@ -73,7 +73,7 @@ export class EventSummaryData {
             pocContactNumber: '9962294222'
         },
         {
-            eventID: 'EVNT00046530',
+            id: 'EVNT00046530',
             month: 'DEC',
             baseLocation: 'Pune',
             beneficiaryName: 'Gurukulam',
@@ -96,7 +96,7 @@ export class EventSummaryData {
             pocContactNumber: '9962294222'
         },
         {
-            eventID: 'EVNT00046531',
+            id: 'EVNT00046531',
             month: 'DEC',
             baseLocation: 'Pune',
             beneficiaryName: 'Gurukulam',
@@ -119,7 +119,7 @@ export class EventSummaryData {
             pocContactNumber: '9962294222'
         },
         {
-            eventID: 'EVNT00046588',
+            id: 'EVNT00046588',
             month: 'DEC',
             baseLocation: 'Chennai',
             beneficiaryName: 'ADW Primary school chitlapakkam',
@@ -142,7 +142,7 @@ export class EventSummaryData {
             pocContactNumber: '9962294222'
         },
         {
-            eventID: 'EVNT00046611',
+            id: 'EVNT00046611',
             month: 'DEC',
             baseLocation: 'Coimbatore',
             beneficiaryName: 'Panchayat Union Primary School, Keeranatham Puthupalayam',
@@ -165,7 +165,7 @@ export class EventSummaryData {
             pocContactNumber: '9962294222'
         },
         {
-            eventID: 'EVNT00047114',
+            id: 'EVNT00047114',
             month: 'DEC',
             baseLocation: 'Chennai',
             beneficiaryName: 'Panchayat Union Primary School, Amman Nagar',

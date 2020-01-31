@@ -58,7 +58,7 @@ export class EventEditComponent implements OnInit {
     if (!this.event) {
       this.pageTitle = 'No product found';
     } else {
-      if (this.event.eventID === '0') {
+      if (this.event.id === '0') {
         this.pageTitle = 'Add Product';
       } else {
         this.pageTitle = `Edit Product: ${this.event.eventName}`;

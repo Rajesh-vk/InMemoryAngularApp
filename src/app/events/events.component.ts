@@ -33,7 +33,7 @@ constructor(private eventService: EventService, private route: ActivatedRoute, p
   }
 
   getSelectedValue(row){
-    this.router.navigate(['/event', row.eventID]);
+    this.router.navigate(['/event', row.id]);
   }
 
 }
