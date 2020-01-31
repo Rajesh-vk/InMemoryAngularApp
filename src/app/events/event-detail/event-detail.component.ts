@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventService } from '../event.service';
 import { Subject } from 'rxjs';
+import { EventSummary, EventResolved } from 'src/app/Model/eventSummay';
 
 @Component({
   selector: 'app-event-detail',
@@ -9,17 +10,26 @@ import { Subject } from 'rxjs';
   styleUrls: ['./event-detail.component.scss']
 })
 export class EventDetailComponent implements OnInit {
- id: string;
- pageTitle = 'Event Detail';
- selectedEvent$ = this.eventService.selectedEvent$;
- private errorMessageSubject = new Subject<string>();
- errorMessage$ = this.errorMessageSubject.asObservable();
-  constructor(private route: ActivatedRoute, private eventService: EventService) { }
+  pageTitle = 'Event Detail';
+  event: EventSummary;
+  errorMessage: string;
 
-  ngOnInit() {
-     this.route.paramMap.subscribe(param => {this.id = param.get('id'); }
-      );
-     this.eventService.selectedEventChanged(this.id);
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    const resolvedData: EventResolved =
+      this.route.snapshot.data.resolvedData;
+    this.errorMessage = resolvedData.error;
+    this.onEventRetrieved(resolvedData.event);
   }
 
+  onEventRetrieved(event: EventSummary): void {
+    this.event = event;
+
+    if (this.event) {
+      this.pageTitle = `Event Detail: ${this.event.eventName}`;
+    } else {
+      this.pageTitle = 'No product found';
+    }
+  }
 }

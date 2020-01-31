@@ -7,6 +7,7 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
 import { EventEditInfoComponent } from './event-edit-info/event-edit-info.component';
 import { EventEditVolundeersComponent } from './event-edit-volundeers/event-edit-volundeers.component';
 import { EventEditComponent } from './event-edit/event-edit.component';
+import { EventResolver } from './event-resolver.service';
 
 @NgModule({
   imports: [
@@ -19,13 +20,13 @@ import { EventEditComponent } from './event-edit/event-edit.component';
          {
            path: ':id',
            component: EventDetailComponent,
-          //  resolve: { resolvedData: ProductResolver }
+          resolve: { resolvedData: EventResolver }
          },
          {
            path: ':id/edit',
            component: EventEditComponent,
           //  canDeactivate: [ProductEditGuard],
-          //  resolve: { resolvedData: ProductResolver },
+           resolve: { resolvedData: EventResolver },
            children: [
              { path: '', redirectTo: 'info', pathMatch: 'full' },
              { path: 'info', component: EventEditInfoComponent },
