@@ -1,3 +1,77 @@
-<p>
-  event-edit-info works!
-</p>
+<div class="card-body">
+  <form novalidate
+        #productForm="ngForm">
+    <fieldset>
+      <legend>Basic Product Information</legend>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="eventNameId">Event Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventNameId"
+                 type="text"
+                 placeholder="Name (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]=event.eventName
+                 name="eventName"
+                 #eventNameVar="ngModel"
+                 [ngClass]="{'is-invalid': (eventNameVar.touched || 
+                                            eventNameVar.dirty ||
+                                            event.id !== 0) && 
+                                            !eventNameVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="eventNameVar.errors?.required">
+              Event name is required.
+            </span>
+            <span *ngIf="eventNameVar.errors?.minlength">
+              Event name must be at least three characters.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="eventDescriptionId">Event Description</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventDescriptionId"
+                 type="text"
+                 placeholder="Code (required)"
+                 required
+                 [(ngModel)]=product.eventDescription
+                 name="eventDescription"
+                 #eventDescriptionVar="ngModel"
+                 [ngClass]="{'is-invalid': (eventDescriptionVar.touched || 
+                                            eventDescriptionVar.dirty ||
+                                            product.id !== 0) &&
+                                            !eventDescriptionVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="eventDescriptionVar.errors?.required">
+              Event Description is required.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <!-- <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="descriptionId">Description</label>
+        <div class="col-md-8">
+          <textarea class="form-control"
+                    id="descriptionId"
+                    placeholder="Description"
+                    rows=3
+                    [(ngModel)]=product.description
+                    name="description"></textarea>
+        </div>
+      </div> -->
+    </fieldset>
+  </form>
+</div>
+
+<div class='alert alert-danger'
+     *ngIf='errorMessage'>{{errorMessage}}
+</div>

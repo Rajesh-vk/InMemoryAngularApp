@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { EventSummary } from 'src/app/Model/eventSummay';
 
 @Component({
   selector: 'app-event-edit-info',
@@ -6,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-edit-info.component.scss']
 })
 export class EventEditInfoComponent implements OnInit {
+  @ViewChild(NgForm) productForm: NgForm;
 
-  constructor() { }
+  errorMessage: string;
+  event: EventSummary;
 
-  ngOnInit() {
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.route.parent.data.subscribe(data => {
+      if (this.productForm) {
+        this.productForm.reset();
+      }
+
+      this.event = data['resolvedData'].EventSummary;
+    });
   }
 
 }

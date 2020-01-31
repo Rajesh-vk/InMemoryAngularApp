@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EventSummary } from 'src/app/Model/eventSummay';
+import { EventSummary, EventResolved } from 'src/app/Model/eventSummay';
 import { EventService } from '../event.service';
 import { Subject, EMPTY } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
@@ -14,17 +14,6 @@ export class EventEditComponent implements OnInit {
   pageTitle = 'Event Edit';
   errorMessage: string;
 
-  selectedEvent$ = this.eventService.selectedEvent$
-  .pipe(
-    tap(data => {
-      this.event = data;
-      console.log('EventEdit', JSON.stringify(data));
-    }),
-    catchError(err => {
-      this.errorMessageSubject.next(err);
-      return EMPTY;
-    })
-  );
   private errorMessageSubject = new Subject<string>();
   errorMessage$ = this.errorMessageSubject.asObservable();
 
@@ -51,10 +40,15 @@ export class EventEditComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.onEventRetrieved();
+    this.route.data.subscribe(data => {
+      const resolvedData: EventResolved = data['resolvedData'];
+      this.errorMessage = resolvedData.error;
+      this.onEventRetrieved(resolvedData.eventSummary);
+    });
   }
 
-  onEventRetrieved(): void {
+  onEventRetrieved(event: EventSummary): void {
+    this.event = event;
     if (!this.event) {
       this.pageTitle = 'No product found';
     } else {
