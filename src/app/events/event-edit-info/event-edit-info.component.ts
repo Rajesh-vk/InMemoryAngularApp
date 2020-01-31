@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { EventSummary } from 'src/app/Model/eventSummay';
+import { EventSummary, EventResolved } from 'src/app/Model/eventSummay';
 
 @Component({
   selector: 'app-event-edit-info',
@@ -18,11 +18,16 @@ export class EventEditInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.parent.data.subscribe(data => {
-      if (this.productForm) {
-        this.productForm.reset();
-      }
+      // if (this.productForm) {
+      //   this.productForm.reset();
+      // }
 
-      this.event = data['resolvedData'].EventSummary;
+      const resolvedData: EventResolved = data['resolvedData'];
+      this.errorMessage = resolvedData.error;
+
+      this.event = resolvedData.eventSummary;
+      console.log(1);
+      console.log(this.event);
     });
   }
 

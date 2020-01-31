@@ -14,11 +14,9 @@ export class EventResolver implements Resolve<EventResolved> {
   resolve(route: ActivatedRouteSnapshot,
           state: RouterStateSnapshot): Observable<EventResolved> {
     const id = route.paramMap.get('id');
-    // this.eventService.selectedEventChanged(id);
     return this.eventService.getEvent(id)
       .pipe(
         map(data => ({ eventSummary: data })),
-        // tap(data => ({ eventSummary: data })),
         catchError(error => {
           const message = `Retrieval error: ${error}`;
           console.error(message);

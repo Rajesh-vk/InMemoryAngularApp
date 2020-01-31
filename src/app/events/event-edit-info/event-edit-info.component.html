@@ -19,7 +19,7 @@
                  #eventNameVar="ngModel"
                  [ngClass]="{'is-invalid': (eventNameVar.touched || 
                                             eventNameVar.dirty ||
-                                            event.id !== 0) && 
+                                            event.id !== '0') && 
                                             !eventNameVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="eventNameVar.errors?.required">
@@ -41,12 +41,12 @@
                  type="text"
                  placeholder="Code (required)"
                  required
-                 [(ngModel)]=product.eventDescription
+                 [(ngModel)]=event.eventDescription
                  name="eventDescription"
                  #eventDescriptionVar="ngModel"
                  [ngClass]="{'is-invalid': (eventDescriptionVar.touched || 
                                             eventDescriptionVar.dirty ||
-                                            product.id !== 0) &&
+                                            event.id !== '0') &&
                                             !eventDescriptionVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="eventDescriptionVar.errors?.required">
