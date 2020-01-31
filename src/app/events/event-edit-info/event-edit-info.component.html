@@ -39,7 +39,7 @@
           <input class="form-control"
                  id="eventDescriptionId"
                  type="text"
-                 placeholder="Code (required)"
+                 placeholder="Description (required)"
                  required
                  [(ngModel)]=event.eventDescription
                  name="eventDescription"
@@ -75,22 +75,22 @@
                                             !eventDateVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="eventDateVar.errors?.required">
-              event name is required.
+              event Date is required.
             </span>
             <span *ngIf="eventDateVar.errors?.minlength">
-              event name must be at least three characters.
+              event Data must be at least three characters.
             </span>
           </span>
         </div>
       </div>
       <div class="form-group row">
         <label class="col-md-2 col-form-label"
-               for="baseLocationId">event Name</label>
+               for="baseLocationId">Base Location</label>
         <div class="col-md-8">
           <input class="form-control"
                  id="baseLocationId"
                  type="text"
-                 placeholder="Name (required)"
+                 placeholder="Base Location (required)"
                  required
                  minlength="3"
                  [(ngModel)]=event.baseLocation
@@ -102,22 +102,22 @@
                                             !baseLocationVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="baseLocationVar.errors?.required">
-              event name is required.
+              Base Location is required.
             </span>
             <span *ngIf="baseLocationVar.errors?.minlength">
-              event name must be at least three characters.
+              Base Location must be at least three characters.
             </span>
           </span>
         </div>
       </div>
       <div class="form-group row">
         <label class="col-md-2 col-form-label"
-               for="beneficiaryNameId">event Name</label>
+               for="beneficiaryNameId">Beneficiary Name</label>
         <div class="col-md-8">
           <input class="form-control"
                  id="beneficiaryNameId"
                  type="text"
-                 placeholder="Name (required)"
+                 placeholder="Beneficiary Name (required)"
                  required
                  minlength="3"
                  [(ngModel)]=event.beneficiaryName
@@ -129,22 +129,22 @@
                                             !beneficiaryNameVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="beneficiaryNameVar.errors?.required">
-              event name is required.
+              Beneficiary Name is required.
             </span>
             <span *ngIf="beneficiaryNameVar.errors?.minlength">
-              event name must be at least three characters.
+              Beneficiary Name must be at least three characters.
             </span>
           </span>
         </div>
       </div>
       <div class="form-group row">
         <label class="col-md-2 col-form-label"
-               for="venueAddressId">event Name</label>
+               for="venueAddressId">Venue Address</label>
         <div class="col-md-8">
           <input class="form-control"
                  id="venueAddressId"
                  type="text"
-                 placeholder="Name (required)"
+                 placeholder="Venue Address (required)"
                  required
                  minlength="3"
                  [(ngModel)]=event.venueAddress
@@ -156,22 +156,22 @@
                                             !venueAddressVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="venueAddressVar.errors?.required">
-              event name is required.
+              Venue Address is required.
             </span>
             <span *ngIf="venueAddressVar.errors?.minlength">
-              event name must be at least three characters.
+              Venue Address must be at least three characters.
             </span>
           </span>
         </div>
       </div>
       <div class="form-group row">
         <label class="col-md-2 col-form-label"
-               for="councilNameId">event Name</label>
+               for="councilNameId">Council Name</label>
         <div class="col-md-8">
           <input class="form-control"
                  id="councilNameId"
                  type="text"
-                 placeholder="Name (required)"
+                 placeholder="Council Name (required)"
                  required
                  minlength="3"
                  [(ngModel)]=event.councilName
@@ -183,10 +183,10 @@
                                             !councilNameVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="councilNameVar.errors?.required">
-              event name is required.
+              Council Name is required.
             </span>
             <span *ngIf="councilNameVar.errors?.minlength">
-              event name must be at least three characters.
+              Council Name must be at least three characters.
             </span>
           </span>
         </div>
