@@ -1,12 +1,12 @@
 <div class="card-body">
   <form novalidate
-        #productForm="ngForm">
+        #eventForm="ngForm">
     <fieldset>
-      <legend>Basic Product Information</legend>
+      <legend>Basic event Information</legend>
 
       <div class="form-group row">
         <label class="col-md-2 col-form-label"
-               for="eventNameId">Event Name</label>
+               for="eventNameId">event Name</label>
         <div class="col-md-8">
           <input class="form-control"
                  id="eventNameId"
@@ -23,10 +23,10 @@
                                             !eventNameVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="eventNameVar.errors?.required">
-              Event name is required.
+              event name is required.
             </span>
             <span *ngIf="eventNameVar.errors?.minlength">
-              Event name must be at least three characters.
+              event name must be at least three characters.
             </span>
           </span>
         </div>
@@ -34,7 +34,7 @@
 
       <div class="form-group row">
         <label class="col-md-2 col-form-label"
-               for="eventDescriptionId">Event Description</label>
+               for="eventDescriptionId">event Description</label>
         <div class="col-md-8">
           <input class="form-control"
                  id="eventDescriptionId"
@@ -50,7 +50,143 @@
                                             !eventDescriptionVar.valid }" />
           <span class="invalid-feedback">
             <span *ngIf="eventDescriptionVar.errors?.required">
-              Event Description is required.
+              event Description is required.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="eventDateId">event Data</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventDateId"
+                 type="text"
+                 placeholder="event Date (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]=event.eventDate
+                 name="eventDate"
+                 #eventDateVar="ngModel"
+                 [ngClass]="{'is-invalid': (eventDateVar.touched || 
+                                            eventDateVar.dirty ||
+                                            event.id !== '0') && 
+                                            !eventDateVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="eventDateVar.errors?.required">
+              event name is required.
+            </span>
+            <span *ngIf="eventDateVar.errors?.minlength">
+              event name must be at least three characters.
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="baseLocationId">event Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="baseLocationId"
+                 type="text"
+                 placeholder="Name (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]=event.baseLocation
+                 name="baseLocation"
+                 #baseLocationVar="ngModel"
+                 [ngClass]="{'is-invalid': (baseLocationVar.touched || 
+                                            baseLocationVar.dirty ||
+                                            event.id !== '0') && 
+                                            !baseLocationVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="baseLocationVar.errors?.required">
+              event name is required.
+            </span>
+            <span *ngIf="baseLocationVar.errors?.minlength">
+              event name must be at least three characters.
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="beneficiaryNameId">event Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="beneficiaryNameId"
+                 type="text"
+                 placeholder="Name (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]=event.beneficiaryName
+                 name="beneficiaryName"
+                 #beneficiaryNameVar="ngModel"
+                 [ngClass]="{'is-invalid': (beneficiaryNameVar.touched || 
+                                            beneficiaryNameVar.dirty ||
+                                            event.id !== '0') && 
+                                            !beneficiaryNameVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="beneficiaryNameVar.errors?.required">
+              event name is required.
+            </span>
+            <span *ngIf="beneficiaryNameVar.errors?.minlength">
+              event name must be at least three characters.
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="venueAddressId">event Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="venueAddressId"
+                 type="text"
+                 placeholder="Name (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]=event.venueAddress
+                 name="venueAddress"
+                 #venueAddressVar="ngModel"
+                 [ngClass]="{'is-invalid': (venueAddressVar.touched || 
+                                            venueAddressVar.dirty ||
+                                            event.id !== '0') && 
+                                            !venueAddressVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="venueAddressVar.errors?.required">
+              event name is required.
+            </span>
+            <span *ngIf="venueAddressVar.errors?.minlength">
+              event name must be at least three characters.
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="councilNameId">event Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="councilNameId"
+                 type="text"
+                 placeholder="Name (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]=event.councilName
+                 name="councilName"
+                 #councilNameVar="ngModel"
+                 [ngClass]="{'is-invalid': (councilNameVar.touched || 
+                                            councilNameVar.dirty ||
+                                            event.id !== '0') && 
+                                            !councilNameVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="councilNameVar.errors?.required">
+              event name is required.
+            </span>
+            <span *ngIf="councilNameVar.errors?.minlength">
+              event name must be at least three characters.
             </span>
           </span>
         </div>
@@ -64,7 +200,7 @@
                     id="descriptionId"
                     placeholder="Description"
                     rows=3
-                    [(ngModel)]=product.description
+                    [(ngModel)]=event.description
                     name="description"></textarea>
         </div>
       </div> -->
