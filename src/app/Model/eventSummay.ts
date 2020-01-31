@@ -21,3 +21,8 @@ export interface EventSummary {
             pocName: string;
             pocContactNumber: string;
 }
+export interface EventResolved {
+    event: EventSummary;
+    error?: any;
+}
+  
