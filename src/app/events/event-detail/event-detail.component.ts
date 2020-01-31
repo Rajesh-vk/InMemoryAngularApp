@@ -17,10 +17,9 @@ export class EventDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const resolvedData: EventResolved =
-    this.route.snapshot.data['resolvedData'];
+    const resolvedData: EventResolved = this.route.snapshot.data['resolvedData'];
     this.errorMessage = resolvedData.error;
-    this.onEventRetrieved(resolvedData.event);
+    this.onEventRetrieved(resolvedData.eventSummary);
   }
 
   onEventRetrieved(event: EventSummary): void {

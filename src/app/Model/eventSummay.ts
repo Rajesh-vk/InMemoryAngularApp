@@ -22,7 +22,7 @@ export interface EventSummary {
             pocContactNumber: string;
 }
 export interface EventResolved {
-    event: EventSummary;
+    eventSummary: EventSummary;
     error?: any;
 }
   

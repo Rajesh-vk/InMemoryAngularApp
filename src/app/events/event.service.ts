@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, combineLatest, EMPTY, from, merge, Subject, throwError, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, EMPTY, from, merge, Subject, throwError, of, Observable } from 'rxjs';
 import { catchError, filter, map, mergeMap, scan, shareReplay, tap, toArray, switchMap } from 'rxjs/operators';
 import { EventSummary } from '../Model/eventSummay';
 
@@ -13,7 +13,6 @@ export class EventService {
 
   eventsSummary$ = this.httpUrl.get<EventSummary[]>(this.eventsSummaryUrl)
     .pipe(
-      tap(data => console.log('EventsSummary', JSON.stringify(data))),
       catchError(this.handleError),
       shareReplay(1)
     );
@@ -28,7 +27,7 @@ export class EventService {
     map(([events, selectedEventId]) =>
     events.find(event => event.eventID === selectedEventId)
     ),
-    tap(event => console.log('selectedEvent', event)),
+
     shareReplay(1)
   );
 
@@ -36,6 +35,18 @@ export class EventService {
 
   selectedEventChanged(selectedEventId: string): void {
     this.eventSelectedSubject.next(selectedEventId);
+  }
+
+  getEvent(id: string): Observable<EventSummary> {
+    // if (id === '0') {
+    //   return of(this.initializeProduct());
+    // }
+    const url = `${this.eventsSummaryUrl}/${id}`;
+    return this.httpUrl.get<EventSummary>(url)
+      .pipe(
+        tap(data => console.log('getEvent: ' + JSON.stringify(data))),
+        catchError(this.handleError)
+      );
   }
 
   private handleError(err: any) {
