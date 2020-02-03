@@ -1,3 +1,39 @@
-<p>
-  event-edit-volundeers works!
-</p>
+<div class="card-body">
+  <form novalidate>
+    <fieldset>
+      <legend>Event Volunteers Information</legend>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="totalNoVolunteersId">Total No Volunteers</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="totalNoVolunteersId"
+                 type="text"
+                 placeholder="totalNoVolunteers (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]="event.totalNoVolunteers"
+                 name="totalNoVolunteers"
+                 #totalNoVolunteersVar="ngModel"
+                 [ngClass]="{'is-invalid': (totalNoVolunteersVar.touched ||
+                                            totalNoVolunteersVar.dirty || 
+                                            event.id !== '0') &&
+                                            !totalNoVolunteersVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="totalNoVolunteersVar.errors?.required">
+              A totalNoVolunteers must be entered.
+            </span>
+            <span *ngIf="totalNoVolunteersVar.errors?.minlength">
+              The totalNoVolunteers must be at least 3 characters in length.
+            </span>
+          </span>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<div class="alert alert-danger"
+     *ngIf="errorMessage">{{errorMessage}}
+</div>
