@@ -11,7 +11,7 @@ export interface EventSummary {
             eventDescription: string;
             eventDate: string;
             totalNoVolunteers?: number;
-            totalVolunteHours: string;
+            totalVolunteHours: number;
             totalTravelHours: string;
             overallVolunteeringHours: string;
             livesImpacted?: number;

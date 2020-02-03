@@ -15,12 +15,13 @@ export class HomeComponent implements OnInit {
   totalEvents = 0;
   liveImpacted = 0;
   totalVolunteers = 0;
-  totalPartcipants = 0;
+  totalVolunteersHours = 0;
   eventSummary$ = this.homeService.eventsSummary$
     .pipe(
       tap(data => {
         this.liveImpacted = data.map(a => a.livesImpacted).reduce((a, b) => a + b);
         this.totalVolunteers = data.map(a => a.totalNoVolunteers).reduce((a, b) => a + b);
+        this.totalVolunteersHours = data.map(a => a.totalVolunteHours).reduce((a, b) => a + b);
         this.totalEvents = data.length;
       }),
       catchError(err => {
