@@ -12,7 +12,6 @@
                  type="text"
                  placeholder="totalNoVolunteers (required)"
                  required
-                 minlength="3"
                  [(ngModel)]="event.totalNoVolunteers"
                  name="totalNoVolunteers"
                  #totalNoVolunteersVar="ngModel"
@@ -24,12 +23,81 @@
             <span *ngIf="totalNoVolunteersVar.errors?.required">
               A totalNoVolunteers must be entered.
             </span>
-            <span *ngIf="totalNoVolunteersVar.errors?.minlength">
-              The totalNoVolunteers must be at least 3 characters in length.
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="totalVolunteHoursId">Total Volunte Hours</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="totalVolunteHoursId"
+                 type="text"
+                 placeholder="totalVolunteHours (required)"
+                 required
+                 [(ngModel)]="event.totalVolunteHours"
+                 name="totalVolunteHours"
+                 #totalVolunteHoursVar="ngModel"
+                 [ngClass]="{'is-invalid': (totalVolunteHoursVar.touched ||
+                                            totalVolunteHoursVar.dirty || 
+                                            event.id !== '0') &&
+                                            !totalVolunteHoursVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="totalVolunteHoursVar.errors?.required">
+              A totalVolunteHours must be entered.
             </span>
           </span>
         </div>
       </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="totalTravelHoursId">Total Travel Hours</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="totalTravelHoursId"
+                 type="text"
+                 placeholder="totalTravelHours (required)"
+                 required
+                 [(ngModel)]="event.totalTravelHours"
+                 name="totalTravelHours"
+                 #totalTravelHoursVar="ngModel"
+                 [ngClass]="{'is-invalid': (totalTravelHoursVar.touched ||
+                                            totalTravelHoursVar.dirty || 
+                                            event.id !== '0') &&
+                                            !totalTravelHoursVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="totalTravelHoursVar.errors?.required">
+              A totalTravelHours must be entered.
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="livesImpactedId">lives Impacted</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="livesImpactedId"
+                 type="text"
+                 placeholder="livesImpacted (required)"
+                 required
+                 [(ngModel)]="event.livesImpacted"
+                 name="livesImpacted"
+                 #livesImpactedVar="ngModel"
+                 [ngClass]="{'is-invalid': (livesImpactedVar.touched ||
+                                            livesImpactedVar.dirty || 
+                                            event.id !== '0') &&
+                                            !livesImpactedVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="livesImpactedVar.errors?.required">
+              A livesImpacted must be entered.
+            </span>
+          </span>
+        </div>
+      </div>
+
+
+
     </fieldset>
   </form>
 </div>
