@@ -6,7 +6,7 @@
 
       <div class="form-group row">
         <label class="col-md-2 col-form-label"
-               for="eventNameId">event Name</label>
+               for="eventNameId">Event Name</label>
         <div class="col-md-8">
           <input class="form-control"
                  id="eventNameId"
@@ -34,7 +34,7 @@
 
       <div class="form-group row">
         <label class="col-md-2 col-form-label"
-               for="eventDescriptionId">event Description</label>
+               for="eventDescriptionId">Event Description</label>
         <div class="col-md-8">
           <input class="form-control"
                  id="eventDescriptionId"
@@ -56,7 +56,7 @@
         </div>
       </div>
 
-      <div class="form-group row">
+      <!-- <div class="form-group row">
         <label class="col-md-2 col-form-label"
                for="eventDateId">event Data</label>
         <div class="col-md-8">
@@ -83,6 +83,7 @@
           </span>
         </div>
       </div>
+       -->
       <div class="form-group row">
         <label class="col-md-2 col-form-label"
                for="baseLocationId">Base Location</label>
@@ -164,47 +165,7 @@
           </span>
         </div>
       </div>
-      <div class="form-group row">
-        <label class="col-md-2 col-form-label"
-               for="councilNameId">Council Name</label>
-        <div class="col-md-8">
-          <input class="form-control"
-                 id="councilNameId"
-                 type="text"
-                 placeholder="Council Name (required)"
-                 required
-                 minlength="3"
-                 [(ngModel)]=event.councilName
-                 name="councilName"
-                 #councilNameVar="ngModel"
-                 [ngClass]="{'is-invalid': (councilNameVar.touched || 
-                                            councilNameVar.dirty ||
-                                            event.id !== '0') && 
-                                            !councilNameVar.valid }" />
-          <span class="invalid-feedback">
-            <span *ngIf="councilNameVar.errors?.required">
-              Council Name is required.
-            </span>
-            <span *ngIf="councilNameVar.errors?.minlength">
-              Council Name must be at least three characters.
-            </span>
-          </span>
-        </div>
-      </div>
-
-      <!-- <div class="form-group row">
-        <label class="col-md-2 col-form-label"
-               for="descriptionId">Description</label>
-        <div class="col-md-8">
-          <textarea class="form-control"
-                    id="descriptionId"
-                    placeholder="Description"
-                    rows=3
-                    [(ngModel)]=event.description
-                    name="description"></textarea>
-        </div>
-      </div> -->
-    </fieldset>
+          </fieldset>
   </form>
 </div>
 

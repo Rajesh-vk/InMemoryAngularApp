@@ -38,15 +38,42 @@ export class EventService {
   }
 
   getEvent(id: string): Observable<EventSummary> {
-    // if (id === '0') {
-    //   return of(this.initializeProduct());
-    // }
+    if (id === '0') {
+      return of(this.initializeEvent());
+    }
     const url = `${this.eventsSummaryUrl}/${id}`;
     return this.httpUrl.get<EventSummary>(url)
       .pipe(
         tap(data => console.log('getEvent: ' + JSON.stringify(data))),
         catchError(this.handleError)
       );
+  }
+
+  private initializeEvent(): EventSummary {
+    // Return an initialized object
+    return {
+            id: '0',
+            month: null,
+            baseLocation: null,
+            beneficiaryName: null,
+            venueAddress: null,
+            councilName: null,
+            project: null,
+            category: null,
+            eventName: null,
+            eventDescription: null,
+            eventDate: null,
+            totalNoVolunteers: null,
+            totalVolunteHours: null,
+            totalTravelHours: null,
+            overallVolunteeringHours: null,
+            livesImpacted: null,
+            activityType: null,
+            status: null,
+            pocID: null,
+            pocName: null,
+            pocContactNumber: null,
+    };
   }
 
   private handleError(err: any) {
