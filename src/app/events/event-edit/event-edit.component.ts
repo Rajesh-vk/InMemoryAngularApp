@@ -89,7 +89,7 @@ export class EventEditComponent implements OnInit {
     this.originalEvent = null;
   }
 
-  saveevent(): void {
+  saveEvent(): void {
     if (this.isValid()) {
       if (this.event.id === '0') {
         this.eventService.createEventSummary(this.event).subscribe({
@@ -116,21 +116,19 @@ export class EventEditComponent implements OnInit {
     // Clear the validation object
     this.dataIsValid = {};
 
-    // 'info' tab
-    // if (this.event.eventName &&
-    //   this.event.eventName.length >= 3 &&
-    //   this.event.eventCode) {
-    //   this.dataIsValid['info'] = true;
-    // } else {
-    //   this.dataIsValid['info'] = false;
-    // }
 
-    // // 'tags' tab
-    // if (this.event.category &&
-    //   this.event.category.length >= 3) {
-    //   this.dataIsValid['tags'] = true;
-    // } else {
-    //   this.dataIsValid['tags'] = false;
-    // }
+    if (this.event.eventName &&
+      this.event.eventName.length >= 3 &&
+      this.event.eventDescription) {
+      this.dataIsValid['info'] = true;
+    } else {
+      this.dataIsValid['info'] = false;
+    }
+
+    if (this.event.totalNoVolunteers ) {
+      this.dataIsValid['tags'] = true;
+    } else {
+      this.dataIsValid['tags'] = false;
+    }
   }
 }
