@@ -86,7 +86,7 @@ export class EventService {
       );
   }
 
-  deleteEventSummary(id: number): Observable<{}> {
+  deleteEventSummary(id: string): Observable<{}> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const url = `${this.eventsSummaryUrl}/${id}`;
     return this.httpUrl.delete<EventSummary>(url, { headers })

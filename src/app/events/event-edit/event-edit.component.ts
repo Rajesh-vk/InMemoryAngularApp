@@ -50,28 +50,28 @@ export class EventEditComponent implements OnInit {
   onEventRetrieved(event: EventSummary): void {
     this.event = event;
     if (!this.event) {
-      this.pageTitle = 'No product found';
+      this.pageTitle = 'No event found';
     } else {
       if (this.event.id === '0') {
-        this.pageTitle = 'Add Product';
+        this.pageTitle = 'Add event';
       } else {
-        this.pageTitle = `Edit Product: ${this.event.eventName}`;
+        this.pageTitle = `Edit event: ${this.event.eventName}`;
       }
     }
   }
 
-  deleteProduct(): void {
-    // if (this.product.id === 0) {
-    //   // Don't delete, it was never saved.
-    //   this.onSaveComplete();
-    // } else {
-    //   if (confirm(`Really delete the product: ${this.product.productName}?`)) {
-    //     this.productService.deleteProduct(this.product.id).subscribe({
-    //       next: () => this.onSaveComplete(),
-    //       error: err => this.errorMessage = err
-    //     });
-    //   }
-    // }
+  deleteEvent(): void {
+    if (this.event.id === '0') {
+      // Don't delete, it was never saved.
+      this.onSaveComplete();
+    } else {
+      if (confirm(`Really delete the event: ${this.event.eventName}?`)) {
+        this.eventService.deleteEventSummary(this.event.id).subscribe({
+          next: () => this.onSaveComplete(),
+          error: err => this.errorMessage = err
+        });
+      }
+    }
   }
 
   isValid(path?: string): boolean {
@@ -89,15 +89,15 @@ export class EventEditComponent implements OnInit {
     this.originalEvent = null;
   }
 
-  saveProduct(): void {
+  saveevent(): void {
     // if (this.isValid()) {
-    //   if (this.product.id === 0) {
-    //     this.productService.createProduct(this.product).subscribe({
+    //   if (this.event.id === 0) {
+    //     this.eventService.createevent(this.event).subscribe({
     //       next: () => this.onSaveComplete(),
     //       error: err => this.errorMessage = err
     //     });
     //   } else {
-    //     this.productService.updateProduct(this.product).subscribe({
+    //     this.eventService.updateevent(this.event).subscribe({
     //       next: () => this.onSaveComplete(),
     //       error: err => this.errorMessage = err
     //     });
@@ -117,17 +117,17 @@ export class EventEditComponent implements OnInit {
     this.dataIsValid = {};
 
     // 'info' tab
-    // if (this.product.productName &&
-    //   this.product.productName.length >= 3 &&
-    //   this.product.productCode) {
+    // if (this.event.eventName &&
+    //   this.event.eventName.length >= 3 &&
+    //   this.event.eventCode) {
     //   this.dataIsValid['info'] = true;
     // } else {
     //   this.dataIsValid['info'] = false;
     // }
 
     // // 'tags' tab
-    // if (this.product.category &&
-    //   this.product.category.length >= 3) {
+    // if (this.event.category &&
+    //   this.event.category.length >= 3) {
     //   this.dataIsValid['tags'] = true;
     // } else {
     //   this.dataIsValid['tags'] = false;
