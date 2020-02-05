@@ -14,7 +14,7 @@ export class EventService {
   eventsSummary$ = this.httpUrl.get<EventSummary[]>(this.eventsSummaryUrl)
     .pipe(
       catchError(this.handleError),
-      shareReplay(1)
+      // shareReplay(1)
     );
 
   private eventSelectedSubject = new BehaviorSubject<string>('0');
