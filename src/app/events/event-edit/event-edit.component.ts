@@ -90,21 +90,21 @@ export class EventEditComponent implements OnInit {
   }
 
   saveevent(): void {
-    // if (this.isValid()) {
-    //   if (this.event.id === 0) {
-    //     this.eventService.createevent(this.event).subscribe({
-    //       next: () => this.onSaveComplete(),
-    //       error: err => this.errorMessage = err
-    //     });
-    //   } else {
-    //     this.eventService.updateevent(this.event).subscribe({
-    //       next: () => this.onSaveComplete(),
-    //       error: err => this.errorMessage = err
-    //     });
-    //   }
-    // } else {
-    //   this.errorMessage = 'Please correct the validation errors.';
-    // }
+    if (this.isValid()) {
+      if (this.event.id === '0') {
+        this.eventService.createEventSummary(this.event).subscribe({
+          next: () => this.onSaveComplete(),
+          error: err => this.errorMessage = err
+        });
+      } else {
+        this.eventService.updateEventSummary(this.event).subscribe({
+          next: () => this.onSaveComplete(),
+          error: err => this.errorMessage = err
+        });
+      }
+    } else {
+      this.errorMessage = 'Please correct the validation errors.';
+    }
   }
 
   onSaveComplete(): void {
