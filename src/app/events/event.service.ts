@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, combineLatest, EMPTY, from, merge, Subject, throwError, of, Observable } from 'rxjs';
 import { catchError, filter, map, mergeMap, scan, shareReplay, tap, toArray, switchMap } from 'rxjs/operators';
 import { EventSummary } from '../Model/eventSummay';
@@ -75,6 +75,39 @@ export class EventService {
             pocContactNumber: null,
     };
   }
+
+  createEventSummary(eventSummary: EventSummary): Observable<EventSummary> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    eventSummary.id = null;
+    return this.httpUrl.post<EventSummary>(this.eventsSummaryUrl, eventSummary, { headers })
+      .pipe(
+        tap(data => console.log('createEventSummary: ' + JSON.stringify(data))),
+        catchError(this.handleError)
+      );
+  }
+
+  deleteEventSummary(id: number): Observable<{}> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const url = `${this.eventsSummaryUrl}/${id}`;
+    return this.httpUrl.delete<EventSummary>(url, { headers })
+      .pipe(
+        tap(data => console.log('deleteEventSummary: ' + id)),
+        catchError(this.handleError)
+      );
+  }
+
+  updateEventSummary(eventSummary: EventSummary): Observable<EventSummary> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const url = `${this.eventsSummaryUrl}/${eventSummary.id}`;
+    return this.httpUrl.put<EventSummary>(url, eventSummary, { headers })
+      .pipe(
+        tap(() => console.log('updateEventSummary: ' + eventSummary.id)),
+        // Return the EventSummary on an update
+        map(() => eventSummary),
+        catchError(this.handleError)
+      );
+  }
+
 
   private handleError(err: any) {
     let errorMessage: string;
