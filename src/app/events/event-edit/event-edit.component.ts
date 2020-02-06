@@ -77,6 +77,7 @@ export class EventEditComponent implements OnInit {
   isValid(path?: string): boolean {
     this.validate();
     if (path) {
+      console.log(this.dataIsValid[path]);
       return this.dataIsValid[path];
     }
     return (this.dataIsValid &&
