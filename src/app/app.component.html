@@ -5,6 +5,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <a class="navbar-brand">{{pageTitle}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span *ngIf="isLoggedIn">Welcome {{ userName }}</span>
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -27,7 +28,7 @@
     </li>
   </ul>
   <ul class="navbar-nav ml-auto">
-      <li class="nav-item"
+      <li class="nav-item-md"
           *ngIf="isLoggedIn">
         <a class="nav-link"
            [routerLink]="['/login']">Welcome {{ userName }}</a>
