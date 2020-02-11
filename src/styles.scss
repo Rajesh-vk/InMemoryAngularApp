@@ -56,6 +56,24 @@ div.card-body {
   margin-top: 10px
 }
 
+.btn-primary.disabled, .btn-primary:disabled {
+  color: #fff;
+  background-color: #f44336;
+  border-color: #f44336;
+}
+
+.btn-primary  {
+  color: #fff;
+  background-color: #f44336;
+  border-color: #f44336;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #f44336;
+  border-color: #f44336;
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
