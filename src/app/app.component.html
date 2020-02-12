@@ -10,8 +10,8 @@
       </div>
 
       <ul class="list-unstyled components">
-          <p>Welcome {{ userName }}</p>
-          <li >
+          <p *ngIf="isLoggedIn">Welcome {{ userName }}</p>
+          <li class="nav-item">
             <a class="nav-link"
             [routerLink]="['/dashBoard']"
             routerLinkActive="active">DashBoard</a>
