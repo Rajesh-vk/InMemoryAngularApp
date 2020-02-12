@@ -1,61 +1,80 @@
 <div class="card">
   <div class="card-header card-header-danger">
-    
     <h4 class="card-title">{{pageTitle}}</h4>
-
   </div>
   <div class="card-body">
     <div class="container" *ngIf="eventSummary$ | async eventSummary">
       <div class="row">
+        
         <div class="col-md-3">
-            <mat-card class="card-main">Total Events
-                <mat-card-content class="card-main">
-                  <p>
-                    {{totalEvents}}
-                  </p>
-                </mat-card-content>
-                <mat-card-footer class="card-ft">
-                  View Details
-                </mat-card-footer>
-              </mat-card>
-        </div> 
-        <div class="col-md-3">
-            <mat-card class="card-main">Live Impacts
-                <mat-card-content class="card-main">
-                  <p>
-                    {{liveImpacted}}
-                  </p>
-                </mat-card-content>
-                <mat-card-footer class="card-ft">
-                  View Details
-                </mat-card-footer>
-              </mat-card>
+          <div class="card">
+              <div class="card-header card-header-danger">
+                <h4 class="card-title">Total Events</h4>
+              </div>
+              <div class="card-body">
+                  
+                  <p class="card-category">
+                      <span class="text-success"><i class="fa fa-long-arrow-up"></i>{{totalEvents}} </span> </p>
+              </div>
+              <div class="card-footer">
+                  <div class="stats">
+                      <i class="material-icons">access_time</i> updated 4 minutes ago
+                  </div>
+              </div>
+            </div>
+
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Live Impacts</h4>
+            </div>
+            <div class="card-body">
+                <p class="card-category">
+                    <span class="text-success"><i class="fa fa-long-arrow-up"></i>{{liveImpacted}} </span> </p>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">access_time</i> updated 4 minutes ago
+                </div>
+            </div>
+          </div>
+
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Volunteers</h4>
+          </div>
+          <div class="card-body">
+              <p class="card-category">
+                  <span class="text-success"><i class="fa fa-long-arrow-up"></i>{{totalVolunteers}} </span> </p>
+          </div>
+          <div class="card-footer">
+              <div class="stats">
+                  <i class="material-icons">access_time</i> updated 4 minutes ago
+              </div>
+          </div>
         </div>
-        <div class="col-md-3">
-            <mat-card class="card-main">Total Volunteers
-                <mat-card-content class="card-main">
-                  <p>
-                    {{totalVolunteers}}
-                  </p>
-                </mat-card-content>
-                <mat-card-footer class="card-ft">
-                  View Details
-                </mat-card-footer>
-              </mat-card>
+
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title">VolunteerHours</h4>
         </div>
-        <div class="col-md-3">
-            <mat-card class="card-main">Total VolunteerHours
-                <mat-card-content class="card-main">
-                  <p>
-                    {{totalVolunteersHours}}
-                  </p>
-                </mat-card-content>
-                <mat-card-footer class="card-ft">
-                  View Details
-                </mat-card-footer>
-              </mat-card>
+        <div class="card-body">
+            <p class="card-category">
+                <span class="text-success"><i class="fa fa-long-arrow-up"></i>{{totalVolunteersHours}} </span> </p>
+        </div>
+        <div class="card-footer">
+            <div class="stats">
+                <i class="material-icons">access_time</i> updated 4 minutes ago
+            </div>
         </div>
       </div>
+
+</div>
     </div>
     
   </div>
