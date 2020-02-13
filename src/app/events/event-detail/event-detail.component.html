@@ -6,43 +6,49 @@
 
   <div class="card-body"
        *ngIf="event">
-        <div class="row">
-          <div class="col-md-3">Event Name:</div>
-          <div class="col-md-6">{{event.eventName}}</div>
+       <div class="row">
+         <div class="col-md-6">
+          <div class="alert alert-info alert-with-icon" data-notify="container">
+            <h6>Event Name</h6>
+            <span data-notify="message">{{event.eventName}}</span>
         </div>
-        <div class="row">
-          <div class="col-md-3">Event Description:</div>
-          <div class="col-md-6">{{event.eventDescription}}</div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">Base Location:</div>
-          <div class="col-md-6">{{event.baseLocation}}</div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">Beneficiary Name:</div>
-          <div class="col-md-6">{{event.beneficiaryName}}</div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">Venue Address:</div>
-          <div class="col-md-6">{{event.venueAddress}}</div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">Total No of Volunteers:</div>
-          <div class="col-md-6">{{event.totalNoVolunteers}}</div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">Total Volunteers Hours:</div>
-          <div class="col-md-6">{{event.totalVolunteHours}}</div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">Total Travel Hours:</div>
-          <div class="col-md-6">{{event.totalTravelHours}}</div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">Lives Impacted:</div>
-          <div class="col-md-6">{{event.livesImpacted}}</div>
-        </div>
-
+        <div class="alert alert-info alert-with-icon" data-notify="container">
+          <h6>Event Description</h6>
+          <span data-notify="message">{{event.eventDescription}}</span>
+      </div>
+      <div class="alert alert-info alert-with-icon" data-notify="container">
+        <h6>Base Location</h6>
+        <span data-notify="message">{{event.baseLocation}}</span>
+    </div>
+    <div class="alert alert-info alert-with-icon" data-notify="container">
+      <h6>Beneficiary Name</h6>
+      <span data-notify="message">{{event.beneficiaryName}}</span>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="alert alert-info alert-with-icon" data-notify="container">
+    <h6>Venue Address</h6>
+    <span data-notify="message">{{event.venueAddress}}</span>
+</div>
+<div class="alert alert-info alert-with-icon" data-notify="container">
+  <h6>Total No of Volunteers</h6>
+  <span data-notify="message">{{event.totalNoVolunteers}}</span>
+</div>
+<div class="alert alert-info alert-with-icon" data-notify="container">
+  <h6>Total Volunteers Hours</h6>
+  <span data-notify="message">{{event.totalVolunteHours}}</span>
+</div>
+<div class="alert alert-info alert-with-icon" data-notify="container">
+  <h6>Total Travel Hours</h6>
+  <span data-notify="message">{{event.totalTravelHours}}</span>
+</div>
+<div class="alert alert-info alert-with-icon" data-notify="container">
+  <h6>Lives Impacted</h6>
+  <span data-notify="message">{{event.livesImpacted}}</span>
+</div>
+         </div>
+       </div>
+      
 
     <div class="row mt-4">
       <div class="col-md-4">
