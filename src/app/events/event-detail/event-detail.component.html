@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header card-header-danger">
     
-      <h4 class="card-title">{{pageTitle}}</h4>
+      <h6 class="card-title">{{pageTitle}}</h6>
   </div>
 
   <div class="card-body"
@@ -24,6 +24,11 @@
       <h6>Beneficiary Name</h6>
       <span data-notify="message">{{event.beneficiaryName}}</span>
   </div>
+  <div class="alert alert-info alert-with-icon" data-notify="container">
+    <h6>Lives Impacted</h6>
+    <span data-notify="message">{{event.livesImpacted}}</span>
+  </div>
+  
 </div>
 <div class="col-md-6">
   <div class="alert alert-info alert-with-icon" data-notify="container">
@@ -41,10 +46,6 @@
 <div class="alert alert-info alert-with-icon" data-notify="container">
   <h6>Total Travel Hours</h6>
   <span data-notify="message">{{event.totalTravelHours}}</span>
-</div>
-<div class="alert alert-info alert-with-icon" data-notify="container">
-  <h6>Lives Impacted</h6>
-  <span data-notify="message">{{event.livesImpacted}}</span>
 </div>
          </div>
        </div>
