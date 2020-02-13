@@ -6,11 +6,11 @@
   <!-- Sidebar Holder -->
   <nav id="sidebar">
       <div class="sidebar-header">
-          <h3>Outreach FMS</h3>
+          <h5>Outreach FMS</h5>
       </div>
 
       <ul class="list-unstyled components">
-          <p *ngIf="isLoggedIn">Welcome {{ userName }}</p>
+          
           <li class="nav-item">
             <a class="nav-link"
             [routerLink]="['/dashBoard']"
@@ -50,8 +50,12 @@
                 <span></span>
                 <span></span>
             </button>
-
-
+            <div class="row" *ngIf="isLoggedIn">
+              
+              <div col-md-6><i  style='font-size:24px' class="fa fa-user" aria-hidden="true"></i></div>
+              <div col-md-6 style="padding-right: 25px"><h6>Welcome {{ userName }}</h6></div>
+          </div>
+            
             
         </div>
     </nav>
