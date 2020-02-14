@@ -25,7 +25,7 @@ p {
   font-size: 1.1em;
   font-weight: 300;
   line-height: 1.7em;
-  color: #999;
+  color: #ddd;
 }
 
 a, a:hover, a:focus {
@@ -35,8 +35,8 @@ a, a:hover, a:focus {
 }
 
 .navbar {
-  padding: 15px 10px;
-  background: #fff;
+  /* padding: 15px 10px; */
+  background: #f4f3ef;
   border: none;
   border-radius: 0;
   margin-bottom: 40px;
@@ -71,10 +71,12 @@ a, a:hover, a:focus {
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  background: #7386D5;
-  color: #fff;
+  background:#fff;
+  color: #66615b !important;
   transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
   transform-origin: bottom left;
+  opacity: .9;
+
 }
 
 #sidebar.active {
@@ -84,12 +86,16 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #6d7fcc;
+  background: #fff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+
+
 }
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #47748b;
+  border-bottom: 1px solid #fff;
 }
 
 #sidebar ul p {
@@ -99,17 +105,17 @@ a, a:hover, a:focus {
 
 #sidebar ul li a {
   padding: 10px;
-  font-size: 1.1em;
+  font-size: 1em;
   display: block;
 }
 #sidebar ul li a:hover {
-  color: #7386D5;
-  background: #fff;
+  color: black;
+   
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
-  color: #fff;
-  background: #6d7fcc;
+  color: #ef8157;
+  background: #fff;
 }
 
 
@@ -128,7 +134,7 @@ a[data-toggle="collapse"] {
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #6d7fcc;
+  background: #f4f3ef;
 }
 
 ul.CTAs {
@@ -149,8 +155,8 @@ a.download {
 }
 
 a.article, a.article:hover {
-  background: #6d7fcc !important;
-  color: #fff !important;
+  background: #f4f3ef !important;
+  color:black !important;
 }
 
 
@@ -160,9 +166,17 @@ a.article, a.article:hover {
 ----------------------------------------------------- */
 #content {
   width: 100%;
-  padding: 1px;
   min-height: 100vh;
   transition: all 0.3s;
+  background-color: #f4f3ef;
+}
+
+.content{
+
+  padding: 15px 15px 10px;
+  margin-bottom: 0;
+  background-color: #fff;
+  box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
 }
 
 #sidebarCollapse {
@@ -237,6 +251,7 @@ a.article, a.article:hover {
 
 
 
+
 /* card style */
 
 .card {
@@ -259,7 +274,7 @@ a.article, a.article:hover {
 }
 
 .card .card-header-danger .card-icon, .card .card-header-danger .card-text, .card .card-header-danger:not(.card-header-icon):not(.card-header-text), .card.bg-danger, .card.card-rotate.bg-danger .back, .card.card-rotate.bg-danger .front {
-  background: linear-gradient(60deg,#7386D5,#7386D5);
+  background: linear-gradient(60deg,#007bff,#007bff);
 }
 
 div.card-header {
