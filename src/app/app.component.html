@@ -4,7 +4,7 @@
 <!-- Main part of the menu-->
 <div class="jumbotron jumbotron-fluid text-center">
   <div class="container">
-    <h3>Outreach Event Management Sysyem</h3> 
+    <h3><i class="fa fa-windows"></i> Outreach Event Management Sysyem</h3> 
   </div>
 </div>
 <div class="wrapper">
@@ -19,29 +19,29 @@
           <li class="nav-item">
             <a class="nav-link"
             [routerLink]="['/dashBoard']"
-            routerLinkActive="active"><i class="fa fa-chevron-right"></i>DashBoard</a>
+            routerLinkActive="active"><i class="fa fa-dashboard"></i> DashBoard</a>
           </li>
           <li>
             <a class="nav-link"
          [routerLink]="['/event']"
          routerLinkActive="active"
-         [routerLinkActiveOptions]="{ exact : true}"><i class="fa fa-chevron-right"></i>Events</a>
+         [routerLinkActiveOptions]="{ exact : true}"><i class="fa fa-tasks"></i> Events</a>
           </li>
           <li >
             <a class="nav-link"
             [routerLink]="['/event', '0', 'edit']"
-               routerLinkActive="active"><i class="fa fa-chevron-right"></i>AddEvents</a>
+               routerLinkActive="active"><i class="fa fa-tasks"></i> AddEvents</a>
           </li>
           <li *ngIf="!isLoggedIn">
             <a class="nav-link"
             [routerLink]="['/login']"
             routerLinkActive="active"
-            ><i class="fa fa-chevron-right"></i>Log In</a>
+            ><i class="fa fa-sign-in"></i> Log In</a>
           </li>
           <li *ngIf="isLoggedIn">
             <a class="nav-link"
             (click)="logOut()"
-            routerLinkActive="active"><i class="fa fa-chevron-right"></i>Log Out</a>
+            routerLinkActive="active"><i class="fa fa-sign-out"></i> Log Out</a>
           </li>
       </ul>
   </nav>
@@ -55,12 +55,12 @@
                 <span></span>
                 <span></span>
             </button>
-            <div class="row" *ngIf="isLoggedIn">
+            <!-- <div class="row" *ngIf="isLoggedIn"> -->
               
               <!-- <div col-md-6><i  style='font-size:24px' class="fa fa-user" aria-hidden="true"></i></div> -->
-              <div col-md-6 style="padding-right: 25px"><h6><i class="fa fa-user-right"></i>Welcome {{ userName }}</h6></div>
-          </div>
-            
+              <!-- <div col-md-6 style="padding-right: 25px"><h6><i class="fa fa-user-right"></i>Welcome {{ userName }}</h6></div> -->
+          <!-- </div> -->
+          <a *ngIf="isLoggedIn"><i style='font-size:24px' class="fa fa-user"></i>Welcome {{ userName }}</a>
             
         </div>
     </nav>
