@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { User } from './user';
+import { map } from 'rxjs/internal/operators/map';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -14,7 +16,9 @@ export class AuthService {
     return !!this.currentUser;
   }
 
-  constructor() { }
+  private loginUrl = 'api/eventSummarys';
+
+  constructor(private httpUrl: HttpClient) { }
 
   login(userNameLoged: string, password: string): void {
     if (!userNameLoged || !password) {
@@ -38,4 +42,23 @@ export class AuthService {
   logout(): void {
     this.currentUser = null;
   }
+  login1(username: string, password: string) {
+    return this.httpUrl.post<any>(this.loginUrl, { username, password })
+        .pipe(map(user => {
+            // login successful if there's a jwt token in the response
+            if (user && user.token) {
+                // store user details and jwt token in local storage to keep user logged in between page refreshes
+                localStorage.setItem('currentUser', JSON.stringify(user));
+            }
+
+            return user;
+        }));
+}
+
+logout1() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentUser');
+}
+
+
 }
