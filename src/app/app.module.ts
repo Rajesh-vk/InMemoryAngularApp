@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -19,6 +19,7 @@ import {AppData} from './app-data';
 import { HomeModule } from './home/home.module';
 import { EventModule } from './events/event.module';
 import { ReportModule } from './report/report.module';
+import { JwtInterceptor } from './httpInterceptor/jwt.Interceptor';
 
 
 @NgModule({
@@ -37,6 +38,9 @@ import { ReportModule } from './report/report.module';
     AppComponent,
     PageNotFoundComponent
   ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
