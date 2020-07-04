@@ -19,20 +19,27 @@ export class LoginComponent {
     if (loginForm && loginForm.valid) {
       const userName = loginForm.form.value.userName;
       const password = loginForm.form.value.password;
-      this.authService.login1(userName, password) .pipe(first())
-      .subscribe(
-        data => {
-          console.log(data);
-          if (this.authService.redirectUrl) {
-            this.router.navigateByUrl(this.authService.redirectUrl);
-          } else {
-            this.router.navigate(['/dashBoard']);
-          }
-        },
-        error => {
-          console.log(error);
-            this.errorMessage = error.status + ' ' + error.statusText;
-        });;
+      this.authService.login(userName, password) 
+      if (this.authService.redirectUrl) {
+              this.router.navigateByUrl(this.authService.redirectUrl);
+            } else {
+              this.router.navigate(['/dashBoard']);
+            }
+          
+      //.pipe(first())
+      // .subscribe(
+      //   data => {
+      //     console.log(data);
+      //     if (this.authService.redirectUrl) {
+      //       this.router.navigateByUrl(this.authService.redirectUrl);
+      //     } else {
+      //       this.router.navigate(['/dashBoard']);
+      //     }
+      //   },
+      //   error => {
+      //     console.log(error);
+      //       this.errorMessage = error.status + ' ' + error.statusText;
+      //   });;
 
       // Navigate to the Product List page after log in.
       // if (this.authService.redirectUrl) {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { User } from '../Model/User';
+import { User } from './user';
 import { map } from 'rxjs/internal/operators/map';
 import { HttpClient } from '@angular/common/http';
  import { environment } from '../../environments/environment';
@@ -25,19 +25,21 @@ export class AuthService {
     if (!userNameLoged || !password) {
       return;
     }
-    // if (userNameLoged === 'admin') {
-    //   this.currentUser = {
-    //     id: 1,
-    //     userName: userNameLoged,
-    //     isAdmin: true
-    //   };
-    //   return;
-    // }
-    // this.currentUser = {
-    //   id: 2,
-    //   userName: userNameLoged,
-    //   isAdmin: false
-    // };
+    if (userNameLoged === 'admin') {
+      this.currentUser = {
+        id: 1,
+        userName: userNameLoged,
+        isAdmin: true
+      };
+      return;
+    }
+    this.currentUser = {
+      id: 2,
+      userName: userNameLoged,
+      isAdmin: false
+    };
+    localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+   
   }
 
   logout(): void {

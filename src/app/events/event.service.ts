@@ -78,7 +78,7 @@ export class EventService {
 
   createEventSummary(eventSummary: EventSummary): Observable<EventSummary> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    eventSummary.id = null;
+    eventSummary.id = 'event12';
     return this.httpUrl.post<EventSummary>(this.eventsSummaryUrl, eventSummary, { headers })
       .pipe(
         tap(data => console.log('createEventSummary: ' + JSON.stringify(data))),
